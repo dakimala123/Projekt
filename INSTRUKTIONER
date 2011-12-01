@@ -1,0 +1,52 @@
+Instruktioner för att använda git med Windows!
+
+Alla instruktioner efter ////// är gemensamma.
+
+[Version 1] - Utan Cygwin
+Följ guiden 
+	http://help.github.com/win-set-up-git/
+Men sluta när du har genererat din SSH-key. Sök upp filen som heter
+	id_rsa.pub
+och KOPIERA den till en annan plats. Döp kopian till
+	Dittnamn.pub
+och maila den till
+	farshidbt@gmail.com
+
+///////////////////////////
+
+[Version 2] - Med Cygwin
+Gå in på
+	http://git-scm.com/download
+Och följ länken till Cygwin. Cygwin i sig är en prompt (som "cmd") och kan installera olika plugins. Du ska starta Cygwin och leta upp var man installerar plugins (om man nu inte får göra det vid installationen). Du skall installera Git.
+
+När du har installerat Cygwin och Git så skall du generera en SSH-nyckel. Detta kan du göra genom att gå in på
+	http://help.github.com/win-set-up-git/
+och scrolla ner till delen med ssh-keygen.
+
+Generera din key, sök upp filen som heter
+	id_rsa.pub
+och KOPIERA en till en annan plats. Döp kopian till 
+        Dittnamn.pub
+och maila den till
+        farshidbt@gmail.com
+
+///////////////////////////
+
+---------------------------------------------------
+
+[Hämta ett repository]
+Ett repository kan närmast anses vara en filbank. Filbanken innehåller all information om allting som har gjorts i filerna men även filerna själva. För att hämta ett repository ställer du dig i den mappen du vill hämta filerna till och skriver
+	git clone git@repository:repo
+
+I vårat fall blir det
+	git clone git@www.besharati.se:projekt
+		       vår domän       vårt reponamn
+
+[Lägga till ändringar]
+När du har ändrat i någon fil och vill uppdatera repositoryt så gör du
+	git commit filnamn -m "Ett kort meddelande om ändringen"
+Därefter skriver du
+	git push
+
+Detta måste göras i samma mapp som du klonade repositoryt i första taget!
+
