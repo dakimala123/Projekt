@@ -17,7 +17,9 @@ och maila den till
 [Version 2] - Med Cygwin
 Gå in på
 	http://git-scm.com/download
-Och följ länken till Cygwin. Cygwin i sig är en prompt (som "cmd") och kan installera olika plugins. Du ska starta Cygwin och leta upp var man installerar plugins (om man nu inte får göra det vid installationen). Du skall installera Git.
+Och följ länken till Cygwin. Cygwin i sig är en prompt (som "cmd") och kan
+installera olika plugins. Du ska starta Cygwin och leta upp var man installerar
+plugins (om man nu inte får göra det vid installationen) och installera Git.
 
 När du har installerat Cygwin och Git så skall du generera en SSH-nyckel. Detta kan du göra genom att gå in på
 	http://help.github.com/win-set-up-git/
@@ -35,7 +37,10 @@ och maila den till
 ---------------------------------------------------
 
 [Hämta ett repository]
-Ett repository kan närmast anses vara en filbank. Filbanken innehåller all information om allting som har gjorts i filerna men även filerna själva. För att hämta ett repository ställer du dig i den mappen du vill hämta filerna till och skriver
+Ett repository kan närmast anses vara en filbank. Filbanken innehåller all 
+information om allting som har gjorts i filerna men innehåller även filerna 
+själva. För att hämta ett repository ställer du dig i den mappen du vill 
+hämta filerna till och skriver
 	git clone git@repository:repo
 
 I vårat fall blir det
