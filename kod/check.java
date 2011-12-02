@@ -10,7 +10,7 @@ import java.util.*;
  */
 public class check {
 
-    private int sarray[][] = new array[9][9]; // för testning
+    private int[][] sArray; // för testning
 
     private boolean checker(int x, int y) {
     }
