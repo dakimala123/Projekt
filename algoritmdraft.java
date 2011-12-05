@@ -43,3 +43,4 @@ private void solve(int x, int y){
 }
 
 //kommentar tillagd av love
+//kommentar tillagd av farre
