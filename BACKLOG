@@ -1,1 +1,32 @@
 BACKLOG
+
+20111205 - första mötet
+
+Lägsta prioritet 0
+Högsta prioritet 10
+
+Backlog per person
+-----------------------------------------------------------------------------
+Niklas (GUI-ansvarig)
+
+10 grafikt gränssnitt (simpelt) 
+	7 inmatning (högre upp viktigare)
+		rita en grafisk representation för sudokut och
+		läsa in användarindata
+		textrutor i den grafiska representation tar bara ett tecken
+		verifiering att indata följer sudokusinvarianten
+		optimering av inläsning
+		
+Farshid (verifieringsmetodansvarig)
+
+10 kontrollmetoder
+	check ifall man får sätta in siffra på (x,y) ruta
+	      3x3-subsudokukontroll
+	      radkontroll
+	      kolumnkontroll
+	verifiering att löst sudoku är korrekt
+
+
+
+
+Global backlog
