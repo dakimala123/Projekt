@@ -1,4 +1,8 @@
-package solver;
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package solve;
 
 /**
  *
@@ -10,14 +14,9 @@ package solver;
  */
 public class check {
 
-    /**
-     * 
-     * @param x
-     * @param y
-     * @param digit
-     * @return 
-     */
-    public boolean check(int xcoord, int ycoord, int digit) {
+    private int[][] sArray;
+
+    public boolean check(int xcoord, int ycoord, int digit, int flag) {
         if ((!(checkHor(xcoord, digit)))
                 && (!(checkVert(ycoord, digit)))
                 && (!(checkMatrix(xcoord, ycoord, digit)))) {
@@ -26,35 +25,81 @@ public class check {
         return false;
     }
 
-//    private boolean check(int xcoord, int ycoord, int digit, int length)
-    /**
-     * 
-     * @param x
-     * @param digit
-     * @return 
-     */
+    public boolean verify() {
+        if (verifyVert() && verifyHor() && verifyMat()) {
+            return true;
+        }
+        return false;
+    }
+
+    private boolean verifyVert() {
+        int x = 0;
+        int y = 0;
+        int i = 1;
+
+        for (; x < 9; x++) {
+            while (y < 9) {
+                if (i > 9) {
+                    i = 1;
+                }
+
+                if (sArray[y][x] == i) {
+                    y++;
+                } else {
+                    i++;
+                }
+            }
+            return true;
+        }
+        return false;
+    }
+
+    private boolean verifyHor() {
+        int x = 0;
+        int y = 0;
+        int i = 1;
+
+        for (; y < 9; y++) {
+            while (x < 9) {
+                if (i > 9) {
+                    i = 1;
+                }
+
+                if (sArray[y][x] == i) {
+                    x++;
+                } else {
+                    i++;
+                }
+            }
+            return true;
+        }
+        return false;
+    }
+
+    private boolean verifyMat() {
+        int x = 0;
+        int y = 0;
+        int i = 1;
+
+    }
+
     private boolean checkHor(int coord, int digit) {
         int i;
 
+
         for (i = 0; i <= 8; i++) {
-            if (sArray[coord][i] = digit) { // assumes 2D-array sArray
+            if (sArray[coord][i] == digit) { // assumes 2D-array sArray
                 return true;
             }
         }
         return false;
     }
 
-    /**
-     * 
-     * @param y
-     * @param digit
-     * @return 
-     */
     private boolean checkVert(int coord, int digit) {
         int i;
 
         for (i = 0; i <= 8; i++) {
-            if (sArray[i][coord] = digit) { // assumes 2D-array sArray
+            if (sArray[i][coord] == digit) { // assumes 2D-array sArray
                 return true;
             }
         }
@@ -83,16 +128,17 @@ public class check {
 
     private boolean matrixCheck(int x, int y, int digit) {
         for (; x <= (x + 2); x++) {
-            for (; y <= (y + 2); y++) {
+            while (y <= (y + 2)) {
                 if (sArray[x][y] == digit) { // assumes 2D-array sArray
                     return true;
-                };
+                }
+                ++y;
             }
         }
         return false;
     }
 
-    private boolean checkMatrix(int x, int y, int digit) {
+    public boolean checkMatrix(int x, int y, int digit) {
         switch (determineY(y) + determineX(x)) {
             case (0):
                 return matrixCheck(0, 0, digit);
