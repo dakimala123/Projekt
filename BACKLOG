@@ -1,32 +1,42 @@
 BACKLOG
 
 20111205 - första mötet
+ 
 
-Lägsta prioritet 0
 Högsta prioritet 10
+Lägsta prioritet 1
+Att göra i nästa sprint 0
 
 Backlog per person
 -----------------------------------------------------------------------------
-Niklas (GUI-ansvarig)
-
-10 grafikt gränssnitt (simpelt) 
-	7 inmatning (högre upp viktigare)
-		rita en grafisk representation för sudokut och
-		läsa in användarindata
-		textrutor i den grafiska representation tar bara ett tecken
-		verifiering att indata följer sudokusinvarianten
-		optimering av inläsning
-		
 Farshid (verifieringsmetodansvarig)
 
-10 kontrollmetoder
-	check ifall man får sätta in siffra på (x,y) ruta
-	      3x3-subsudokukontroll
-	      radkontroll
-	      kolumnkontroll
-	verifiering att löst sudoku är korrekt
+kontrollmetoder
+	10 check ifall man får sätta in siffra på (x,y) ruta
+	      	3x3-subsudokukontroll
+	      	radkontroll
+		kolumnkontroll
+	0 verifiering att löst sudoku är korrekt
+
+Jonas, Linnea, Love (högnivåprogrammering)
+
+algoritmer och lösningsmetoder
+        implementera lösningsmetod
+	    9 implementera totalsökningalgoritm (brute force)
+	    5  implementera förkontroll (insättning av "säkra" siffror)
+	    0  implementera James Crook's pre-emptive set metod
 
 
+Niklas (GUI-ansvarig)
+
+grafikt gränssnitt (simpelt) 
+	8 inmatning (högre upp viktigare)
+	0 verifiering att indata följer sudokuinvarianten
+	7 rita en grafisk representation för sudokut och
+	   läsa in användarindata
+	1 textrutor i den grafiska representation tar bara ett tecken
+	  
+	0 optimering av inläsning
 
 
 Global backlog
