@@ -8,14 +8,14 @@ package solve;
  * @author Linnea Sandelin
  * @author Jonas Rosenlind
  */
-public class check {
+public class check extends verification {
 
     private int[][] sArray;
 
-    public boolean check(int xcoord, int ycoord, int digit, int flag) {
+    public boolean check(int xcoord, int ycoord, int digit) {
         if ((!(checkHor(xcoord, digit)))
                 && (!(checkVert(ycoord, digit)))
-                && (!(checkMatrix(xcoord, ycoord, digit)))) {
+                && (!(checkQuadrant(xcoord, ycoord, digit)))) {
             return true;
         }
         return false;
@@ -76,7 +76,7 @@ public class check {
         return false;
     }
 
-    public boolean checkMatrix(int x, int y, int digit) {
+    public boolean checkQuadrant(int x, int y, int digit) {
         switch (determineY(y) + determineX(x)) {
             case (0):
                 return matrixCheck(0, 0, digit);
@@ -99,66 +99,5 @@ public class check {
             default:
                 return true;
         }
-    }
-
-    
-    public boolean verify() {
-        if (verifyVert() && verifyHor() && verifyMat()) {
-            return true;
-        }
-        return false;
-    }
-
-    private boolean verifyVert() {
-        int x = 0;
-        int y = 0;
-        int i = 1;
-
-        for (; x < 9; x++) {
-            while (y < 9) {
-                if (i > 9) {
-                    i = 1;
-                }
-
-                if (sArray[y][x] == i) {
-                    y++;
-                } else {
-                    i++;
-                }
-            }
-            return true;
-        }
-        return false;
-    }
-
-    private boolean verifyHor() {
-        int x = 0;
-        int y = 0;
-        int i = 1;
-
-        for (; y < 9; y++) {
-            while (x < 9) {
-                if (i > 9) {
-                    i = 1;
-                }
-
-                if (sArray[y][x] == i) {
-                    x++;
-                } else {
-                    i++;
-                }
-            }
-            return true;
-        }
-        return false;
-    }
-
-    private boolean verifyMat() {
-        int x = 0;
-        int y = 0;
-        int i = 1;
-
-        
-
     }
 }
