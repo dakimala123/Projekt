@@ -29,13 +29,3 @@ public static void main(String[] args){
 
 
 }
-=======
-/**
- * hej lägger in kommentar för att testa commit
- */
->>>>>>> .merge_file_LGDyEA
-=======
-/**
- * hej lägger in kommentar för att testa commit
- */
->>>>>>> .merge_file_LkwdAE
