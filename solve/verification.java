@@ -87,10 +87,11 @@ public class verification {
             if (i == sudokuArray[y][x] && (y <= 8)) {
                 counter++;
                 y++;
-            } else {
+            } else if (y <= 8) {
                 y++;
+            } else {
+                a++;
             }
-            a++;
         }
         
         if (counter > 1) {
