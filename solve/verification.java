@@ -25,7 +25,7 @@ public class verification {
                     i = 1;
                 }
 
-                if (sudokuArray[y][x] == i && uniqueOnLine(x, y, i)) {
+                if (sudokuArray[y][x] == i && verticalUnique(x, y, i)) {
                     y++;
                 } else {
                     i++;
