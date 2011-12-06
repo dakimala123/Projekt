@@ -80,6 +80,8 @@ public class verification {
     private boolean uniqueInMatrix(int x, int y, int i) {
         int a = y + 2;
         int b = x + 2;
+        int counter = 0;
+        
         for (; x <= b; x++) {
             for (; y <= a; y++) {
                 if (sudokuArray[y][x] == i) { // assumes 2D-array sArray
