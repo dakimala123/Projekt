@@ -67,8 +67,10 @@ public class check extends verification {
     }
 
     private boolean matrixCheck(int x, int y, int digit) {
-        for (; x <= (x + 2); x++) {
-            for (; y <= (y + 2); y++) {
+        int a = y + 2;
+        int b = x + 2;
+        for (; x <= b; x++) {
+            for (; y <= a; y++) {
                 if (sArray[x][y] == digit) { // assumes 2D-array sArray
                     return true;
                 }
