@@ -1,12 +1,9 @@
-package solve;
-
 public class verification {
     
     private int[][] sArray;
 
-    public Verify(int[][] array) {
+    public void Verify(int[][] array) {
         sArray = array;
-        verify();
     } 
 
     public boolean verify() {
@@ -78,11 +75,11 @@ public class verification {
         return true;
     }
 
-    private boolean verifyMat() {
-        int x = 0;
-        int y = 0;
-        int i = 1;
-        
-        
-    }
+//    private boolean verifyMat() {
+//        int x = 0;
+//        int y = 0;
+//        int i = 1;
+//        
+//        
+//    }
 }
