@@ -12,6 +12,11 @@ public class check extends verification {
 
     private int[][] sArray;
 
+    public Check(int[][] array,int x, int y, int n) {
+        sArray = array;
+        check(x,y,n);
+    }
+
     public boolean check(int xcoord, int ycoord, int digit) {
         if ((!(checkHor(xcoord, digit)))
                 && (!(checkVert(ycoord, digit)))

@@ -4,6 +4,11 @@ public class verification {
     
     private int[][] sArray;
 
+    public Verify(int[][] array) {
+        sArray = array;
+        verify();
+    } 
+
     public boolean verify() {
         if (verifyVert() && verifyHor()/* && verifyMat()*/) {
             return true;
@@ -53,6 +58,24 @@ public class verification {
             return true;
         }
         return false;
+    }
+
+    private boolean isUnique(int x, int y, int i) {
+        int counter = 0;
+        int a = x;
+        int b = y;
+
+        while (a == x) {
+            if (i == sArray[y][x]) {
+                counter++;
+            } else {
+                x++;
+            }
+        }
+        if (counter > 1) {
+            return false;
+        }
+        return true;
     }
 
     private boolean verifyMat() {

@@ -25,7 +25,7 @@ public class Sudoku extends Check {
             solve(++x, y);
         } else {
             for (int n = 1; n < 10; n++) {
-                if (check(x, y, n)) {
+                if (Check(sudokuArray,x, y, n)) {
                     sudokuArray[y][x] = n;
                     solve(++x, y);
                 }
@@ -35,7 +35,7 @@ public class Sudoku extends Check {
     }
 
     private void exitAndCheck() {
-        if (verify()) {
+        if (Verify()) {
             print();
             System.exit(0);
         } else {
