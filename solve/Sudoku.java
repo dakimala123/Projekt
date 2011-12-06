@@ -21,16 +21,16 @@ public class Sudoku extends Check {
             } else {
                 solve(x, y);
             }
-        } else if (sudokuArray[x][y] != 0) {
+        } else if (sudokuArray[y][x] != 0) {
             solve(++x, y);
         } else {
             for (int n = 1; n < 10; n++) {
                 if (check(x, y, n)) {
-                    sudokuArray[x][y] = n;
+                    sudokuArray[y][x] = n;
                     solve(++x, y);
                 }
             }
-            sudokuArray[x][y] = 0;
+            sudokuArray[y][x] = 0;
         }
     }
 
@@ -48,7 +48,7 @@ public class Sudoku extends Check {
 
         for (int y = 0; y < 9; y++) {
             for (int x = 0; x < 9; x++) {
-                System.out.print("" + (sudokuArray[x][y]));
+                System.out.print("" + (sudokuArray[y][x]));
             }
             System.out.println();
         }
