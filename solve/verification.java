@@ -1,8 +1,10 @@
-package solve;
-
 public class verification {
     
     private int[][] sArray;
+
+    public void Verify(int[][] array) {
+        sArray = array;
+    } 
 
     public boolean verify() {
         if (verifyVert() && verifyHor()/* && verifyMat()*/) {
@@ -55,11 +57,29 @@ public class verification {
         return false;
     }
 
-    private boolean verifyMat() {
-        int x = 0;
-        int y = 0;
-        int i = 1;
-        
-        
+    private boolean isUnique(int x, int y, int i) {
+        int counter = 0;
+        int a = x;
+        int b = y;
+
+        while (a == x) {
+            if (i == sArray[y][x]) {
+                counter++;
+            } else {
+                x++;
+            }
+        }
+        if (counter > 1) {
+            return false;
+        }
+        return true;
     }
+
+//    private boolean verifyMat() {
+//        int x = 0;
+//        int y = 0;
+//        int i = 1;
+//        
+//        
+//    }
 }

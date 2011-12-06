@@ -1,5 +1,3 @@
-package solve;
-
 /**
  *
  * @author Farshid Besharati
@@ -11,6 +9,10 @@ package solve;
 public class check extends verification {
 
     private int[][] sArray;
+
+    public void Check(int[][] array) {
+        sArray = array;
+    }
 
     public boolean check(int xcoord, int ycoord, int digit) {
         if ((!(checkHor(xcoord, digit)))
