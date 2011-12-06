@@ -5,7 +5,7 @@
 *
 *Main metod för att testa solve algoritmen
 *
-*
+*@version alpha
 */
 
 public static void main(String[] args){
