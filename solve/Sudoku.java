@@ -37,14 +37,13 @@ public class Sudoku extends Check {
     private void exitAndCheck() {
         if (verify()) {
             print();
-            System.exit();
+            System.exit(0);
         } else {
-            throw new RunTimeException("Sudoku was not correctly solved");
+            throw new RuntimeException("Sudoku was not correctly solved");
         }
 
 
     }
-
     private void print() {
 
         for (int y = 0; y < 9; y++) {
