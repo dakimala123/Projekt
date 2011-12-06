@@ -30,12 +30,16 @@ algoritmer och lösningsmetoder
 Niklas (GUI-ansvarig)
 
 grafikt gränssnitt (simpelt) 
-	8 inmatning (högre upp viktigare)
-	0 verifiering att indata följer sudokuinvarianten
+	8 inmatning (högre upp viktigare) 			*KLART*
 	7 rita en grafisk representation för sudokut och
-	   läsa in användarindata
+	   läsa in användarindata 				*KLART*
+
+
+	8 Fixa uppritning av output
+	5 verifiering att indata följer sudokuinvarianten
+	4 Koppla ihop output från mainSolve till uppritning
 	1 textrutor i den grafiska representation tar bara ett tecken
-	  
+	 
 	0 optimering av inläsning
 
 
