@@ -1,3 +1,4 @@
+<<<<<<< .merge_file_3qx1aA
 <<<<<<< .merge_file_c7y2G0
 
 /**
@@ -33,3 +34,8 @@ public static void main(String[] args){
  * hej lägger in kommentar för att testa commit
  */
 >>>>>>> .merge_file_LGDyEA
+=======
+/**
+ * hej lägger in kommentar för att testa commit
+ */
+>>>>>>> .merge_file_LkwdAE
