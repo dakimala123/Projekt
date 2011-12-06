@@ -1,3 +1,4 @@
+package solve;
 /**
  *
  * @author Farshid Besharati
@@ -71,10 +72,11 @@ public class check extends verification {
         int b = x + 2;
         for (; x <= b; x++) {
             for (; y <= a; y++) {
-                if (sArray[x][y] == digit) { // assumes 2D-array sArray
+                if (sudokuArray[x][y] == digit) { // assumes 2D-array sArray
                     return true;
                 }
             }
+            y = 0;
         }
         return false;
     }
