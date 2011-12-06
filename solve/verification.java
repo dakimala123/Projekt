@@ -1,9 +1,14 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package solve;
 
 public class verification {
 
     private int[][] sudokuArray;
 
-    public void Verify(int[][] array) {
+    public verification(int[][] array) {
         sudokuArray = array;
     }
 

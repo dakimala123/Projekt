@@ -1,3 +1,7 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package solve;
 
 /**
@@ -13,12 +17,13 @@ public class check extends verification {
     private int[][] sudokuArray;
 
     public check(int[][] array) {
+        super(array);
         sudokuArray = array;
     }
 
     public boolean checker(int xcoord, int ycoord, int digit) {
-        if ((!(checkHor(xcoord, digit)))
-                && (!(checkVert(ycoord, digit)))
+        if ((!(checkHor(ycoord, digit)))
+                && (!(checkVert(xcoord, digit)))
                 && (!(checkQuadrant(xcoord, ycoord, digit)))) {
             return true;
         }
@@ -57,7 +62,7 @@ public class check extends verification {
                     return true;
                 }
             }
-            y = a-2;
+            y = a - 2;
         }
         return false;
     }

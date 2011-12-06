@@ -1,16 +1,20 @@
+package solve;
+
 public class sudoku extends check {
 
     private int[][] sudokuArray;
     
     public sudoku(int[][] someArray) {
         super(someArray);
+        sudokuArray = someArray;
     }
+    
 
 //    public sudoku(String sudokuString) {
 //        throw new UnsupportedOperationException("String constructor not yet implemented");
 //    }
 
-    private void solve(int x, int y) {
+    public void solve(int x, int y) {
         if (x > 8) {
             x = 0;
             ++y;
@@ -41,7 +45,7 @@ public class sudoku extends check {
         
             print();
             System.exit(0);        
-        }
+        //}
     }
 
     private void print() {
