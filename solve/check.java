@@ -7,7 +7,7 @@ package solve;
 /**
  *
  * @author Farshid Besharati
- * @author Love Lindstr√∂m
+ * @author Love Lindström
  * @author Niklas Forsmark
  * @author Linnea Sandelin
  * @author Jonas Rosenlind
@@ -22,6 +22,10 @@ public class check extends verification {
     }
 
     public boolean checker(int xcoord, int ycoord, int digit) {
+        if (xcoord > 8 || ycoord > 8) {
+            return true;
+        }
+        
         if ((!(checkHor(ycoord, digit)))
                 && (!(checkVert(xcoord, digit)))
                 && (!(checkQuadrant(xcoord, ycoord, digit)))) {
@@ -30,7 +34,7 @@ public class check extends verification {
         return false;
     }
 
-    private boolean checkHor(int coord, int digit) {
+    public boolean checkHor(int coord, int digit) {
         int i;
 
 
@@ -42,7 +46,7 @@ public class check extends verification {
         return false;
     }
 
-    private boolean checkVert(int coord, int digit) {
+    public boolean checkVert(int coord, int digit) {
         int i;
 
         for (i = 0; i <= 8; i++) {
@@ -67,7 +71,7 @@ public class check extends verification {
         return false;
     }
 
-    private boolean checkQuadrant(int x, int y, int digit) {
+    public boolean checkQuadrant(int x, int y, int digit) {
         if (((0 <= x) && (x <= 2)) && ((0 <= y) && (y <= 2))) {
             return matrixCheck(0, 0, digit);
         } else if (((0 <= x) && (x <= 2)) && ((3 <= y) && (y <= 5))) {
