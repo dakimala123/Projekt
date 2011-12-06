@@ -24,7 +24,7 @@ public class verification {
                     i = 1;
                 }
 
-                if (sArray[y][x] == i) {
+                if (sArray[y][x] == i && isUnique(x,y,i)) {
                     y++;
                 } else {
                     i++;
@@ -46,7 +46,7 @@ public class verification {
                     i = 1;
                 }
 
-                if (sArray[y][x] == i) {
+                if (sArray[y][x] == i && isUnique(x,y,i)) {
                     x++;
                 } else {
                     i++;
@@ -57,7 +57,7 @@ public class verification {
         return false;
     }
 
-    private boolean isUnique(int x, int y, int i) {
+    public boolean isUnique(int x, int y, int i) {
         int counter = 0;
         int a = x;
         int b = y;
