@@ -35,8 +35,8 @@ grafikt gränssnitt (simpelt)
 	   läsa in användarindata 				*KLART*
 
 
-	8 Fixa uppritning av output
 	5 verifiering att indata följer sudokuinvarianten
+	4 Fixa uppritning av output
 	4 Koppla ihop output från mainSolve till uppritning
 	1 textrutor i den grafiska representation tar bara ett tecken
 	 
