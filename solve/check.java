@@ -1,20 +1,20 @@
 /**
  *
  * @author Farshid Besharati
- * @author Love Lindström
+ * @author Love Lindstr√∂m
  * @author Niklas Forsmark
  * @author Linnea Sandelin
  * @author Jonas Rosenlind
  */
 public class check extends verification {
 
-    private int[][] sArray;
+    private int[][] sudokuArray;
 
-    public void Check(int[][] array) {
-        sArray = array;
+    public check(int[][] array) {
+        sudokuArray = array;
     }
 
-    public boolean check(int xcoord, int ycoord, int digit) {
+    public boolean checker(int xcoord, int ycoord, int digit) {
         if ((!(checkHor(xcoord, digit)))
                 && (!(checkVert(ycoord, digit)))
                 && (!(checkQuadrant(xcoord, ycoord, digit)))) {
@@ -28,7 +28,7 @@ public class check extends verification {
 
 
         for (i = 0; i <= 8; i++) {
-            if (sArray[coord][i] == digit) { // assumes 2D-array sArray
+            if (sudokuArray[coord][i] == digit) { // assumes 2D-array sArray
                 return true;
             }
         }
@@ -39,7 +39,7 @@ public class check extends verification {
         int i;
 
         for (i = 0; i <= 8; i++) {
-            if (sArray[i][coord] == digit) { // assumes 2D-array sArray
+            if (sudokuArray[i][coord] == digit) { // assumes 2D-array sArray
                 return true;
             }
         }
@@ -68,16 +68,17 @@ public class check extends verification {
 
     private boolean matrixCheck(int x, int y, int digit) {
         for (; x <= (x + 2); x++) {
-            for (; y <= (y + 2); y++) {
-                if (sArray[x][y] == digit) { // assumes 2D-array sArray
+            while (y <= (y + 2)) {
+                if (sudokuArray[x][y] == digit) { // assumes 2D-array sArray
                     return true;
                 }
+                ++y;
             }
         }
         return false;
     }
 
-    public boolean checkQuadrant(int x, int y, int digit) {
+    private boolean checkQuadrant(int x, int y, int digit) {
         switch (determineY(y) + determineX(x)) {
             case (0):
                 return matrixCheck(0, 0, digit);
