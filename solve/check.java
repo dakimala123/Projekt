@@ -70,8 +70,8 @@ public class check extends verification {
     private boolean matrixCheck(int x, int y, int digit) {
         int a = y + 2;
         int b = x + 2;
-        for (; x <= b; x++) {
-            for (; y <= a; y++) {
+        for (; x < b; x++) {
+            for (; y < a; y++) {
                 if (sudokuArray[x][y] == digit) { // assumes 2D-array sArray
                     return true;
                 }
