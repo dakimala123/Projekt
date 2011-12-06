@@ -1,10 +1,11 @@
+
 public class verification {
-    
+
     private int[][] sArray;
 
     public void Verify(int[][] array) {
         sArray = array;
-    } 
+    }
 
     public boolean verify() {
         if (verifyVert() && verifyHor()/* && verifyMat()*/) {
@@ -24,7 +25,7 @@ public class verification {
                     i = 1;
                 }
 
-                if (sArray[y][x] == i && isUnique(x,y,i)) {
+                if (sArray[y][x] == i && isUnique(x, y, i)) {
                     y++;
                 } else {
                     i++;
@@ -46,7 +47,7 @@ public class verification {
                     i = 1;
                 }
 
-                if (sArray[y][x] == i && isUnique(x,y,i)) {
+                if (sArray[y][x] == i && isUnique(x, y, i)) {
                     x++;
                 } else {
                     i++;
@@ -65,6 +66,7 @@ public class verification {
         while (a == x) {
             if (i == sArray[y][x]) {
                 counter++;
+                a++;
             } else {
                 x++;
             }
@@ -75,11 +77,29 @@ public class verification {
         return true;
     }
 
-//    private boolean verifyMat() {
-//        int x = 0;
-//        int y = 0;
-//        int i = 1;
-//        
-//        
-//    }
+    private boolean verifyMatrix() {
+        int x = 0;
+        int y;
+        int i = 1;
+
+        for (y = 0; y < 9; y++) {
+            if (i > 9) {
+                i = 1;
+            }
+
+            while (y <= (y + 2)) {
+                while (x <= (x + 2)) {
+                    if (isUnique(x, y, i)) {
+                        i++;
+                        x++;
+                    } else {
+                        return false;
+                    }
+                }
+                y++;
+            }
+
+        }
+        return false;
+    }
 }
