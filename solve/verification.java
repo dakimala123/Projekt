@@ -8,7 +8,7 @@ public class verification {
     }
 
     public boolean verify() {
-        if (verifyVert() && verifyHor() && verifyMat()) {
+        if (verifyVert() && verifyHor() && verifyMatrix()) {
             return true;
         }
         return false;
@@ -25,7 +25,7 @@ public class verification {
                     i = 1;
                 }
 
-                if (sudokuArray[y][x] == i && isUnique(x, y, i)) {
+                if (sudokuArray[y][x] == i && uniqueOnLine(x, y, i)) {
                     y++;
                 } else {
                     i++;
@@ -47,7 +47,7 @@ public class verification {
                     i = 1;
                 }
 
-                if (sudokuArray[y][x] == i && isUnique(x, y, i)) {
+                if (sudokuArray[y][x] == i && horizontalUnique(x, y, i)) {
                     x++;
                 } else {
                     i++;
@@ -58,19 +58,41 @@ public class verification {
         return false;
     }
 
-    private boolean uniqueOnLine(int x, int y, int i) {
+    private boolean horizontalUnique(int x, int y, int i) {
         int counter = 0;
-        int a = x;
-        int b = y;
+        int a = y;
 
-        while (a == x) {
-            if (i == sudokuArray[y][x]) {
+        while (a == y) {
+            if (i == sudokuArray[y][x] && (x <= 8)) {
                 counter++;
-                a++;
-            } else {
                 x++;
+            } else if (x <= 8) {
+                x++;
+            } else {
+                a++;
             }
         }
+        
+        if (counter > 1) {
+            return false;
+        }
+        return true;
+    }
+    
+    private boolean verticalUnique(int x, int y, int i) {
+        int counter = 0;
+        int a = x;
+
+        while (a == x) {
+            if (i == sudokuArray[y][x] && (y <= 8)) {
+                counter++;
+                y++;
+            } else {
+                y++;
+            }
+            a++;
+        }
+        
         if (counter > 1) {
             return false;
         }
