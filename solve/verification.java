@@ -1,14 +1,14 @@
 
 public class verification {
 
-    private int[][] sArray;
+    private int[][] sudokuArray;
 
     public void Verify(int[][] array) {
-        sArray = array;
+        sudokuArray = array;
     }
 
     public boolean verify() {
-        if (verifyVert() && verifyHor()/* && verifyMat()*/) {
+        if (verifyVert() && verifyHor() && verifyMat()) {
             return true;
         }
         return false;
@@ -25,7 +25,7 @@ public class verification {
                     i = 1;
                 }
 
-                if (sArray[y][x] == i && isUnique(x, y, i)) {
+                if (sudokuArray[y][x] == i && isUnique(x, y, i)) {
                     y++;
                 } else {
                     i++;
@@ -47,7 +47,7 @@ public class verification {
                     i = 1;
                 }
 
-                if (sArray[y][x] == i && isUnique(x, y, i)) {
+                if (sudokuArray[y][x] == i && isUnique(x, y, i)) {
                     x++;
                 } else {
                     i++;
@@ -58,13 +58,13 @@ public class verification {
         return false;
     }
 
-    public boolean isUnique(int x, int y, int i) {
+    private boolean uniqueOnLine(int x, int y, int i) {
         int counter = 0;
         int a = x;
         int b = y;
 
         while (a == x) {
-            if (i == sArray[y][x]) {
+            if (i == sudokuArray[y][x]) {
                 counter++;
                 a++;
             } else {
@@ -77,28 +77,38 @@ public class verification {
         return true;
     }
 
+    private boolean uniqueInMatrix(int x, int y, int i) {
+        int a = y + 2;
+        int b = x + 2;
+        int counter = 0;
+        
+        for (; x <= b; x++) {
+            for (; y <= a; y++) {
+                if (sudokuArray[y][x] == i) { // assumes 2D-array sArray
+                    counter++;
+                }
+            }
+            y = a-2;
+        }
+
+        if (counter > 1) {
+            return false;
+        }
+        return true;
+    }
+
     private boolean verifyMatrix() {
         int x = 0;
-        int y;
+        int y = 0;
         int i = 1;
 
-        for (y = 0; y < 9; y++) {
-            if (i > 9) {
-                i = 1;
-            }
-
-            while (y <= (y + 2)) {
-                while (x <= (x + 2)) {
-                    if (isUnique(x, y, i)) {
-                        i++;
-                        x++;
-                    } else {
-                        return false;
-                    }
+        for (; y <= 6; y++) {
+            while (i <= 9) {
+                if (uniqueInMatrix(x,y,i)) {
+                    i++;
                 }
-                y++;
             }
-
+            y += 3;
         }
         return false;
     }
