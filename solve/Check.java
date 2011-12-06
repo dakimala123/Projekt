@@ -77,6 +77,8 @@ public class check {
         int y = 0;
         int i = 1;
 
+        
+
     }
 
     private boolean checkHor(int coord, int digit) {
